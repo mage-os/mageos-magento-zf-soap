@@ -15,7 +15,7 @@ trait DeprecatedAssertionsTrait
         string $message = ''
     ): void {
         $r = new ReflectionProperty($instance, $attribute);
-        $r->setAccessible(true);
+        // setAccessible() is deprecated in PHP 8.5 and no longer needed
         Assert::assertEquals($expected, $r->getValue($instance), $message);
     }
 }

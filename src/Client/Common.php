@@ -41,22 +41,27 @@ class Common extends SoapClient
      * Overridden to implement different transport layers, perform additional
      * XML processing or other purpose.
      *
-     * @param  string $request
-     * @param  string $location
-     * @param  string $action
-     * @param  int    $version
-     * @param  int    $oneWay
      * @return mixed
      */
     #[ReturnTypeWillChange]
-    public function __doRequest($request, $location, $action, $version, $oneWay = null)
-    {
+    public function __doRequest(
+        string $request,
+        string $location,
+        string $action,
+        int $version,
+        bool $oneWay = false,
+        ?string $uriParserClass = null
+    ) {
         // ltrim is a workaround for https://bugs.php.net/bug.php?id=63780
-        if ($oneWay === null) {
-            return ($this->doRequestCallback)($this, ltrim($request), $location, $action, $version);
-        }
-
-        return ($this->doRequestCallback)($this, ltrim($request), $location, $action, $version, $oneWay);
+        return ($this->doRequestCallback)(
+            $this,
+            ltrim($request),
+            $location,
+            $action,
+            $version,
+            $oneWay,
+            $uriParserClass
+        );
     }
 
     /**
@@ -65,19 +70,16 @@ class Common extends SoapClient
      *
      * @internal
      *
-     * @param  string   $request
-     * @param  string   $location
-     * @param  string   $action
-     * @param  int      $version
-     * @param  null|int $oneWay
      * @return mixed
      */
-    public function parentDoRequest($request, $location, $action, $version, $oneWay = null)
-    {
-        if ($oneWay === null) {
-            return parent::__doRequest($request, $location, $action, $version);
-        }
-
-        return parent::__doRequest($request, $location, $action, $version, $oneWay);
+    public function parentDoRequest(
+        string $request,
+        string $location,
+        string $action,
+        int $version,
+        bool $oneWay = false,
+        ?string $uriParserClass = null
+    ) {
+        return parent::__doRequest($request, $location, $action, $version, $oneWay, $uriParserClass);
     }
 }

@@ -78,10 +78,11 @@ class DotNet extends SOAPClient
      * @param  string       $location The SOAP URI.
      * @param  string       $action   The SOAP action to call.
      * @param  int          $version  The SOAP version to use.
-     * @param  int          $oneWay  (Optional) The number 1 if a response is not expected.
+     * @param  bool         $oneWay  (Optional) True if a response is not expected.
+     * @param  string|null  $uriParserClass (Optional) URI parser class for custom URI handling.
      * @return string The XML SOAP response.
      */
-    public function _doRequest(CommonClient $client, $request, $location, $action, $version, $oneWay = null)
+    public function _doRequest(CommonClient $client, string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null)
     {
         if (! $this->useNtlm) {
             return parent::_doRequest(
@@ -90,7 +91,8 @@ class DotNet extends SOAPClient
                 $location,
                 $action,
                 $version,
-                $oneWay
+                $oneWay,
+                $uriParserClass
             );
         }
 

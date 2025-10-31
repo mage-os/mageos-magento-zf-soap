@@ -1069,23 +1069,23 @@ class Client implements ServerClient
      * @param  int    $oneWay
      * @return mixed
      */
-    public function _doRequest(Client\Common $client, $request, $location, $action, $version, $oneWay = null)
-    {
+    public function _doRequest(
+        Client\Common $client,
+        string $request,
+        string $location,
+        string $action,
+        int $version,
+        bool $oneWay = false,
+        ?string $uriParserClass = null
+    ) {
         // Perform request as is
-        if ($oneWay === null) {
-            return $client->parentDoRequest(
-                $request,
-                $location,
-                $action,
-                $version
-            );
-        }
         return $client->parentDoRequest(
             $request,
             $location,
             $action,
             $version,
-            $oneWay
+            $oneWay,
+            $uriParserClass
         );
     }
     // @codingStandardsIgnoreEnd
