@@ -557,7 +557,7 @@ if (extension_loaded('soap')) {
         }
 
         #[ReturnTypeWillChange]
-        public function __doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null): ?string
+        public function __doRequest($request, $location, $action, $version, $one_way = 0): ?string
         {
             ob_start();
             $this->server->handle($request);

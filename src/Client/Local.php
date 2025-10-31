@@ -45,11 +45,10 @@ class Local extends SOAPClient
      * @param  string $location
      * @param  string $action
      * @param  int    $version
-     * @param  bool   $oneWay
-     * @param  string|null $uriParserClass
+     * @param  int    $oneWay
      * @return mixed
      */
-    public function _doRequest(Common $client, string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null)
+    public function _doRequest(Common $client, $request, $location, $action, $version, $oneWay = null)
     {
         // Perform request as is
         ob_start();
