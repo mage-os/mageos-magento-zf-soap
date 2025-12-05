@@ -1382,6 +1382,9 @@
     <DeprecatedInterface>
       <code><![CDATA[MockServer]]></code>
     </DeprecatedInterface>
+    <InvalidDocblock>
+      <code><![CDATA[public function addMultiple($test)]]></code>
+    </InvalidDocblock>
     <InvalidDocblockParamName>
       <code><![CDATA[$arg]]></code>
     </InvalidDocblockParamName>
@@ -1868,6 +1871,7 @@
       <code><![CDATA[1]]></code>
     </InvalidArgument>
     <InvalidDocblock>
+      <code><![CDATA[public static function ampersandInUrlDataProvider(): array]]></code>
       <code><![CDATA[public static function dataProviderForAddService(): array]]></code>
     </InvalidDocblock>
     <InvalidScalarArgument>
