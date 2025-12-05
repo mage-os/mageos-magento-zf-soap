@@ -860,11 +860,11 @@ class ServerTest extends TestCase
         $server->setClass(errorClass::class);
 
         $client = new Local($server, $wsdlFilename);
-        
+
         // PHP 8.5 converts E_USER_ERROR to SoapFault
-        $this->expectException(\SoapFault::class);
+        $this->expectException(SoapFault::class);
         $this->expectExceptionMessage('TestError');
-        
+
         try {
             $client->triggerError();
         } finally {
