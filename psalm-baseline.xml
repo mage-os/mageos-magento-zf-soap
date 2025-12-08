@@ -214,7 +214,6 @@
       <code><![CDATA[$this->connectionTimeout]]></code>
       <code><![CDATA[$type]]></code>
       <code><![CDATA[$value]]></code>
-      <code><![CDATA[$value]]></code>
     </MixedAssignment>
     <MixedOperand>
       <code><![CDATA[$class]]></code>
