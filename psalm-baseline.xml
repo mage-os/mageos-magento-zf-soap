@@ -207,12 +207,12 @@
       <code><![CDATA[$type['type_name']]]></code>
     </MixedArrayAccess>
     <MixedAssignment>
-      <code><![CDATA[$class]]></code>
       <code><![CDATA[$key]]></code>
       <code><![CDATA[$options['classmap']]]></code>
       <code><![CDATA[$result]]></code>
       <code><![CDATA[$this->connectionTimeout]]></code>
       <code><![CDATA[$type]]></code>
+      <code><![CDATA[$value]]></code>
       <code><![CDATA[$value]]></code>
     </MixedAssignment>
     <MixedOperand>
