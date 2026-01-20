@@ -1,5 +1,5 @@
 {
-    "name": "laminas/laminas-soap",
+    "name": "magento/magento-zf-soap",
     "description": " ",
     "license": "BSD-3-Clause",
     "keywords": [
@@ -42,6 +42,9 @@
         "vimeo/psalm": "^6.13",
         "amphp/dns": "^2.4",
         "amphp/socket": "^2.3.1"
+    },
+    "replace": {
+      "laminas/laminas-soap": "^2.14"
     },
     "suggest": {
         "ext-curl": "Curl is required when .NET compatibility is required",
